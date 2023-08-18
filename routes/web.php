@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'Main Page';
+    return view('index', [
+//        'name' => 'Ron'
+    ]);
 });
 
 Route::get('/hello', function () {
-    return 'Hello';
+    return 'Hello'; // can't insert <tags> because it will escape from it
 })->name('world');
 
 Route::get('/halo', function () {
