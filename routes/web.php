@@ -70,16 +70,22 @@ Route::get('/', function() use ($tasks) { // anonymous function
     return view('index', [
         'tasks' => $tasks
     ]);
-});
+})->name('task.index');
 
-Route::get('/hello', function () {
-    return 'Hello'; // can't insert <tags> because it will escape from it
-})->name('world');
-
-Route::get('/halo', function () {
-    return redirect()->route('helliwordl');
-});
+Route::get('/{id}', function ($id) {
+   return 'One single task';
+})->name('task.show');
 
 Route::fallback(function () {
    return "Still got somewhere";
 });
+
+
+
+//Route::get('/hello', function () {
+//    return 'Hello'; // can't insert <tags> because it will escape from it
+//})->name('world');
+//
+//Route::get('/halo', function () {
+//    return redirect()->route('helliwordl');
+//});
