@@ -66,13 +66,17 @@ $tasks = [
     ),
 ];
 
-Route::get('/', function() use ($tasks) { // anonymous function
+Route::get('/', function () {
+    return redirect()->route('task.index');
+});
+
+Route::get('/tasks', function() use ($tasks) { // anonymous function
     return view('index', [
         'tasks' => $tasks
     ]);
 })->name('task.index');
 
-Route::get('/{id}', function ($id) {
+Route::get('/tasks/{id}', function ($id) {
    return 'One single task';
 })->name('task.show');
 
