@@ -66,9 +66,9 @@ $tasks = [
     ),
 ];
 
-Route::get('/', function () {
+Route::get('/', function() use ($tasks) { // anonymous function
     return view('index', [
-//        'name' => 'Ron'
+        'tasks' => $tasks
     ]);
 });
 
