@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/tasks', function() { // anonymous function
     return view('index', [
-        'tasks' => \App\Models\Task::latest()->get() // gets most recent tasks
+        'tasks' => \App\Models\Task::latest()->where('completed', true)->get() // gets most recent tasks where tasks are completed
     ]);
 })->name('tasks.index');
 
