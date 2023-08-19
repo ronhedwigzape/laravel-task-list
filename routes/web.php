@@ -78,7 +78,7 @@ Route::get('/tasks', function() use ($tasks) { // anonymous function
 })->name('tasks.index');
 
 Route::get('/tasks/{id}', function ($id) {
-    return view('show', ['task' => \App\Models\Task::find($id)]);
+    return view('show', ['task' => \App\Models\Task::findOrFail($id)]);
 })->name('tasks.show');
 
 Route::fallback(function () {
