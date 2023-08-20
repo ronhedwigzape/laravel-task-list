@@ -24,7 +24,7 @@ Route::get('/', function () {
 // list of tasks (home)
 Route::get('/tasks', function() { // anonymous function
     return view('index', [
-        'tasks' => Task::latest()->get() // gets most recent tasks
+        'tasks' => Task::latest()->paginate(10) // gets most recent tasks
     ]);
 })->name('tasks.index');
 
