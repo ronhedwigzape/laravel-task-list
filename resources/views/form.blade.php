@@ -28,8 +28,7 @@
                 id="description"
                 rows="5"
                 @class(['border-red-500' => $errors->has('description')])
-            >
-                {{ $task->description ?? old('description') }}</textarea>
+            >{{ $task->description ?? old('description') }}</textarea>
             @error('description')
             <p class="error">{{ $message }}</p>
             @enderror
@@ -42,8 +41,7 @@
                 id="long_description"
                 rows="10"
                 @class(['border-red-500' => $errors->has('title')])
-            >
-                {{ $task->long_description ?? old('long_description') }}</textarea>
+            >{{ $task->long_description ?? old('long_description') }}</textarea>
             @error('long_description')
             <p class="error">{{ $message }}</p>
             @enderror
